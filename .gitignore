@@ -1,0 +1,14 @@
+node_modules
+.env
+coverage
+coverage.json
+typechain
+package-lock.json
+docs
+
+#Hardhat & forge files
+gen
+
+.DS_Store
+
+gitmodule

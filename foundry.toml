@@ -1,0 +1,39 @@
+[profile.default]
+src = 'contracts'
+out = 'gen/out'
+libs = ['node_modules', 'lib']
+cache_path  = 'gen/cache_forge'
+broadcast = 'gen/broadcast'
+# script = 'script'
+# fs_permissions = [{ access = "read", path = "./"}]
+
+
+solc_version = '0.7.6'
+evm_version = 'istanbul'
+
+fs_permissions = [{ access = "read-write", path = "./"}]
+
+# via_ir = true
+# optimizer = true
+# optimizer_runs = 1000000
+
+remappings = [
+	"solidity-bytes-utils/=node_modules/@layerzerolabs/solidity-bytes-utils/",
+	"tapioca-sdk/=gitmodule/tapioca-sdk/contracts/",
+	"tap-utils/=lib/tap-utils/contracts/",
+	"permitc/=lib/tap-utils/lib/permitc/src/", # Needs to be init in the periph repo
+	"LayerZero/=lib/LayerZero/contracts/"
+]
+
+
+# [etherscan]
+# arbitrum-sepolia = { key = "${ARBITRUM_SEPOLIA_API_KEY}", url = "https://api-sepolia.arbiscan.io/api"}
+
+
+[rpc_endpoints]
+optimism_goerli = "https://optimism-goerli.public.blastapi.io"
+optimism = "https://optimism.llamarpc.com"
+
+# [etherscan]
+# optimism_goerli = { key = "${OPTIMISM_GOERLI_ETHERSCAN_API_KEY}", url = "${OPTIMISM_GOERLI_ETHERSCAN_VERIFIER_URL}" }
+# optimism = { key = "${OPTIMISM_ETHERSCAN_API_KEY}", url = "${OPTIMISM_ETHERSCAN_VERIFIER_URL}" }
